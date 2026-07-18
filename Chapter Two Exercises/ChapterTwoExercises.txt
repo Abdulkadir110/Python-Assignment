@@ -1,0 +1,51 @@
+Python Assignment
+
+Question 2.1
+
+a) print('x =', x)
+b) print('Value of', x, '+', x, 'is', (x + x))
+c) print('x =')
+d) print((x + y), '=', (y + x))
+
+Display output :
+x = 2
+Value of 2 + 2 is 4
+x =
+5 = 9
+
+Question 2.2
+the return type for the input is a string, so it has to be type cast in to n integer.
+
+rating = int(input('Enter an integer rating between 1 and 10'))
+
+
+Question 2.3
+if grade >= 90:
+    print("Congrations! Your grade of ", grade , "earns you an A")
+
+Question 2.4
+
+sum = float(27.9 + 2)
+sub = float(27.9 - 2)
+product = float(27.9 * 2)
+divide = float(27.9 / 2)
+floor = float(27.9 // 2)
+exponient = float(27.9 ** 2)
+
+
+print(sum)
+print(difference)
+print(product)
+print(division)
+print(floor)
+print(exponient)
+sum = 29.9
+difference = 25.9
+product = 55.8
+division = 13.95
+floor = 13.0
+exponient = 778.41
+
+
+Question 2.13
+integers above 4300 digits  wont be accepted for integer string conversion. use sys.set_int_max_str_digits() to increase the limit.
