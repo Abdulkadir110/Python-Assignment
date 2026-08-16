@@ -1,15 +1,13 @@
-given_number = input("Enter your number: ")
+decimal_number = int(input("Enter a decimal number: "))
+binary_number = ""
 
-total = 0
-index = len(given_number) - 1
-for number in given_number:
-    total += int(number) * 2** index
-    index -= 1
+if decimal_number == 0:
+    binary_number = "0"
+else:
+    num = decimal_number
+    while num > 0:
+        remainder = num % 2
+        binary_number = str(remainder) + binary_number
+        num = num // 2
 
-print("decimal: " ,total)
-
-
-
-
-        
-       
+print("Binary:", binary_number)

@@ -17,8 +17,11 @@ while is_running :
     match (user_input) :
         case 1 : 
             deposit = int(input("How much do want to deposit: "))
-            balance = balance + deposit
-            print("New balance is: ", balance)
+            if(deposit < 0) :
+                print("Come to nearest branch to collect loan Oga!")
+            else :
+                balance = balance + deposit
+                print("New balance is: ", balance)
         
         case 2: 
             withdraw = int(input("How much do want to withdraw: "))
