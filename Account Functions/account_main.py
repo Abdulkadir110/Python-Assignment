@@ -13,12 +13,13 @@ def isDigit(balance, amount) :
         new_balance =  deposit(amount,balance)
     
         if new_balance == balance:
-            print("Invalid Amount Inputted")
+            printd("Invalid Amount Inputted")
             
         else:
             balance  =  new_balance
             print("Deposit was Successful")
     return balance
+
     
 def main():
 
@@ -56,25 +57,25 @@ def main():
                     
             case "2":
                     amount  =  input("Enter your Amount to Deposit:  ")
-                    isDigit(balance, amount)
+#                    isDigit(balance, amount)
                     
-#                    for digit in amount:
-#                        if  not digit.isdigit():
-#                            print("Invalid")
-#                            break
-#                            
-#                            
-#                    else: 
-#                        amount = float(amount)
-#                    
-#                        new_balance =  deposit(amount,balance)
-#                    
-#                        if new_balance == balance:
-#                            print("Invalid Amount Inputted")
-#                            
-#                        else:
-#                            balance  =  new_balance
-#                            print("Deposit was Successful")
+                    for digit in amount:
+                        if  not digit.isdigit():
+                            print("Invalid")
+                            break
+                            
+                            
+                    else: 
+                        amount = float(amount)
+                    
+                        new_balance =  deposit(amount,balance)
+                    
+                        if new_balance == balance:
+                            print("Invalid Amount Inputted")
+                            
+                        else:
+                            balance  =  new_balance
+                            print("Deposit was Successful")
                         
             case "3": 
                     
@@ -98,9 +99,9 @@ def main():
              
              
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
 
-    main()    
+main()    
 
     
     
