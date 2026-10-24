@@ -97,3 +97,13 @@ class TestPharmacy(TestCase):
             ade_pharmacy.register_pharmacist(pharmacist)
         self.assertEqual(1, len(ade_pharmacy.pharmacists))
         self.assertIn(pharmacist, ade_pharmacy.pharmacists)
+
+    def test_to_register_a_pharmacist_get_registered_pharmacist(self):
+        admin1 = Admin("Abdulkadir", 1)
+        ade_pharmacy = Pharmacy("ade", admin1)
+        pharmacist = Pharmacist("pharmacist", "08192663")
+        pharmacist.id = 1
+        ade_pharmacy.register_pharmacist(pharmacist)
+        self.assertIn(pharmacist, ade_pharmacy.pharmacists)
+        got_pharmacist = ade_pharmacy.get_pharmacist(1)
+        self.assertEqual(pharmacist, got_pharmacist)

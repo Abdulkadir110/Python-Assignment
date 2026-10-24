@@ -44,6 +44,10 @@ class Pharmacy:
         self._validate_id(pharmacist.id)
         self.pharmacists.append(pharmacist)
 
+    def get_pharmacist(self, pharmacist_id: int) -> Pharmacist:
+        found_pharmacist = self._find_pharmacist(pharmacist_id)
+        return found_pharmacist
+
     def _validate_id(self, given_id: int) -> None:
         if given_id < 0:
             raise ValueError("Pharmacy id cannot be negative")
