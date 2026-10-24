@@ -9,7 +9,7 @@ class Pharmacy:
         self.address = "Lagos"
         self.admin = employed_admin
         self.inventory: list[Item] = []
-        self.pharmacists: list[pharmacist.Pharmacist] = []
+        self.pharmacists: list[Pharmacist] = []
 
     def add_item(self, item: Item, quantity: int) -> None:
         self._validate_item(item)
