@@ -48,6 +48,9 @@ class Pharmacy:
         found_pharmacist = self._find_pharmacist(pharmacist_id)
         return found_pharmacist
 
+    def check_expiry(self):
+        return [item for item in self.inventory if item.is_expired()]
+
     def _validate_id(self, given_id: int) -> None:
         if given_id < 0:
             raise ValueError("Pharmacy id cannot be negative")
