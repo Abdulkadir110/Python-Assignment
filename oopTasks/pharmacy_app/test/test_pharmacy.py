@@ -85,3 +85,15 @@ class TestPharmacy(TestCase):
         ade_pharmacy.register_pharmacist(pharmacist)
         self.assertEqual(1, len(ade_pharmacy.pharmacists))
         self.assertIn(pharmacist, ade_pharmacy.pharmacists)
+
+    def test_to_register_a_pharmacist_twice_raises_exception(self):
+        admin1 = Admin("Abdulkadir", 1)
+        ade_pharmacy = Pharmacy("ade", admin1)
+        pharmacist = Pharmacist("pharmacist", "08192663")
+        pharmacist.id = 1
+        ade_pharmacy.register_pharmacist(pharmacist)
+        self.assertEqual(1, len(ade_pharmacy.pharmacists))
+        with self.assertRaises(ValueError):
+            ade_pharmacy.register_pharmacist(pharmacist)
+        self.assertEqual(1, len(ade_pharmacy.pharmacists))
+        self.assertIn(pharmacist, ade_pharmacy.pharmacists)

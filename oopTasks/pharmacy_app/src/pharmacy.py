@@ -47,9 +47,9 @@ class Pharmacy:
     def _validate_id(self, given_id: int) -> None:
         if given_id < 0:
             raise ValueError("Pharmacy id cannot be negative")
-        for each_pharmacist in self.pharmacists:
-            if each_pharmacist.id == given_id:
-                raise ValueError("Pharmacy id is already registered")
+        found_pharmacist = self._find_pharmacist(given_id)
+        if found_pharmacist is not None:
+            raise ValueError("Pharmacy already has this pharmacist")
 
     def _find_pharmacist(self, given_id: int) -> Pharmacist:
         for each_pharmacist in self.pharmacists:
