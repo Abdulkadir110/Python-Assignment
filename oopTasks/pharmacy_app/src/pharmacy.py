@@ -39,3 +39,16 @@ class Pharmacy:
 
     def get_inventory(self):
         return self.inventory
+
+    @property
+    def pharmacists(self) -> list[pharmacist.Pharmacist]:
+        return self.pharmacists
+    @pharmacists.setter
+    def pharmacists(self, pharmacists):
+        self.pharmacists = pharmacists
+    @property
+    def inventory(self) -> list[Item]:
+        return self.inventory
+    @inventory.setter
+    def inventory(self, inventory: list[Item]):
+        self.inventory = inventory
