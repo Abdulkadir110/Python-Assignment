@@ -1,5 +1,5 @@
 from admin import Admin
-import pharmacist
+from pharmacist import Pharmacist
 from items import Item
 
 
@@ -40,4 +40,19 @@ class Pharmacy:
     def get_inventory(self):
         return self.inventory
 
+    def register_pharmacist(self, pharmacist: Pharmacist) -> None:
+        self._validate_id(pharmacist.id)
+        self.pharmacists.append(pharmacist)
 
+    def _validate_id(self, given_id: int) -> None:
+        if given_id < 0:
+            raise ValueError("Pharmacy id cannot be negative")
+        for each_pharmacist in self.pharmacists:
+            if each_pharmacist.id == given_id:
+                raise ValueError("Pharmacy id is already registered")
+
+    def _find_pharmacist(self, given_id: int) -> Pharmacist:
+        for each_pharmacist in self.pharmacists:
+            if each_pharmacist.id == given_id:
+                return each_pharmacist
+        return None

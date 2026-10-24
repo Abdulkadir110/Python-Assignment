@@ -2,6 +2,7 @@ from unittest import TestCase
 
 from admin import Admin
 from drug import Drug
+from pharmacist import Pharmacist
 from pharmacy import Pharmacy
 
 
@@ -75,3 +76,12 @@ class TestPharmacy(TestCase):
         list_of_items = ade_pharmacy.get_inventory()
         self.assertIn(malaria_drug, list_of_items)
         self.assertEqual(len(list_of_items), len(ade_pharmacy.inventory))
+
+    def test_to_register_a_pharmacist_list_of_pharmacist_is_one(self):
+        admin1 = Admin("Abdulkadir", 1)
+        ade_pharmacy = Pharmacy("ade", admin1)
+        pharmacist = Pharmacist("pharmacist", "08192663")
+        pharmacist.id = 1
+        ade_pharmacy.register_pharmacist(pharmacist)
+        self.assertEqual(1, len(ade_pharmacy.pharmacists))
+        self.assertIn(pharmacist, ade_pharmacy.pharmacists)
