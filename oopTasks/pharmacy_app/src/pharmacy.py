@@ -1,10 +1,10 @@
-import admin
+from admin import Admin
 import pharmacist
 from items import Item
 
 
 class Pharmacy:
-    def __init__(self, name: str, employed_admin: admin.Admin):
+    def __init__(self, name: str, employed_admin: Admin):
         self.name = name
         self.address = "Lagos"
         self.admin = employed_admin
